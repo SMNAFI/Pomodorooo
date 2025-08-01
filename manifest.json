@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Pomodorooo",
+  "version": "1.0",
+  "description": "A Chrome extension to help you stay focused using the Pomodoro technique.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
