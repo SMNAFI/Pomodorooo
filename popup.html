@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pomodoro Plus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomodoro Timer Extension</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Pomodorooo</h1>
-    <div id="timer">1:00</div>
-    <div class="controls">
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="reset">Reset</button>
+  <div class="extension-container">
+    <div class="header">
+      <h1>🍅 Pomodoro Timer</h1>
+      <p>Stay focused, stay productive</p>
+    </div>
+    <div class="timer-section">
+      <div class="session-type" id="sessionType">Work Session</div>
+      <div class="timer-display">
+        <svg class="progress-ring">
+          <circle class="progress-ring-bg" cx="100" cy="100" r="90"></circle>
+          <circle class="progress-ring-fill" cx="100" cy="100" r="90" id="progressCircle"></circle>
+        </svg>
+        <div class="timer-text" id="timerDisplay">25:00</div>
+      </div>
+      <div class="controls">
+        <button class="control-btn play-btn" id="playBtn">▶</button>
+        <button class="control-btn pause-btn hidden" id="pauseBtn">⏸</button>
+        <button class="control-btn reset-btn" id="resetBtn">⏹</button>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number" id="todaySessions">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="todayTime">0m</span>
+          <span class="stat-label">Total Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="streak">0</span>
+          <span class="stat-label">Streak</span>
+        </div>
+      </div>
+    </div>
+    <div class="settings">
+      <div class="setting-row">
+        <span class="setting-label">Work Time</span>
+        <div class="setting-value">
+          <button class="setting-btn" id="workMinus">−</button>
+          <span class="setting-time" id="workTime">25m</span>
+          <button class="setting-btn" id="workPlus">+</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <span class="setting-label">Break Time</span>
+        <div class="setting-value">
+          <button class="setting-btn" id="breakMinus">−</button>
+          <span class="setting-time" id="breakTime">5m</span>
+          <button class="setting-btn" id="breakPlus">+</button>
+        </div>
+      </div>
     </div>
   </div>
   <script src="popup.js"></script>
